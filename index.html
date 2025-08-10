@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moodscape</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <main>
+    <div class="header-container">
+      <h1 id="title">Moodscape</h1>
+      <div id="moodHistoryContainer" class="mood-history-container">
+        <button id="historyBtn" class="history-button"><i class="fa-solid fa-chart-column"></i></button>
+        <div id="moodRankingContainer" class="mood-ranking-container hidden">
+          <h3 id="rankingTitle">Your Mood History</h3>
+          <div id="moodCalendar" class="mood-calendar"></div>
+          <div id="moodStats" class="mood-stats"></div>
+          <button id="closeRankingBtn" class="close-ranking-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="language-selector">
+        <label id="languageLabel" for="languageSelect">Language:</label>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
+    </div>
+
+    <input id="moodInput" type="text" placeholder="Describe your mood..." autocomplete="off" />
+    <button id="generateBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate</button>
+
+    <div class="canvas-wrapper">
+      <section id="canvasContainer"></section>
+      <button id="muteBtn" class="mute-button">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    </div>
+
+    <div id="presetButtons">
+      <button data-mood="happy" id="happyBtn"><i class="fa-regular fa-face-smile"></i> Happy</button>
+      <button data-mood="sad" id="sadBtn"><i class="fa-regular fa-face-frown"></i> Sad</button>
+      <button data-mood="neutral" id="neutralBtn"><i class="fa-regular fa-face-meh"></i> Neutral</button>
+    </div>
+
+    <p id="description" class="footer-description">
+      Enter a short phrase describing your current mood or feeling, then click "Generate" to create a unique visual and
+      audio experience that reflects your emotions.
+      Alternatively, use one of the preset mood buttons to instantly explore different moods.
+      The system analyzes your input to determine if your mood is positive, negative, or neutral, and adjusts colors,
+      animations, and sounds accordingly.
+      Move your mouse over the animation to dynamically change the audio frequency and particle motion for an
+      interactive experience.
+    </p>
+  </main>
+
+  <script src="https://unpkg.com/sentiment@5.0.2/build/sentiment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <script src="sentiment.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
